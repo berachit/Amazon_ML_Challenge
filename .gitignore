@@ -1,0 +1,111 @@
+# Competition data
+data/
+
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+from pathlib import Path
+
+gitignore = """# ================================
+# Python
+# ================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ================================
+# Virtual environments / Conda
+# ================================
+.venv/
+venv/
+env/
+ENV/
+.env/
+.conda/
+conda-env/
+*.conda
+
+# ================================
+# Jupyter Notebook
+# ================================
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ================================
+# Secrets / credentials
+# ================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ================================
+# Data
+# ================================
+# Challenge datasets should stay local
+# and should NOT be pushed to GitHub.
+data/
+*.tsv
+*.csv
+*.parquet
+
+# ================================
+# ML / experiment artifacts
+# ================================
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+models/
+checkpoints/
+wandb/
+mlruns/
+
+# ================================
+# Logs / temporary files
+# ================================
+*.log
+logs/
+tmp/
+temp/
+
+# ================================
+# IDEs / editors
+# ================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ================================
+# OS files
+# ================================
+.DS_Store
+Thumbs.db
+desktop.ini
+"""
+
+path = Path("/mnt/data/.gitignore")
+path.write_text(gitignore, encoding="utf-8")
+print(f"Created: {path}")
